@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>information</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='information.css') }}">
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+    <script type="text/javascript" src="../static/filtering.js"></script>
+  </head>
+
+  <body>
+      <header>
+          <div class="header_title">
+              <h1 class="h_title">逆評定 in web</h1>
+          </div>
+          <div class="header_list">
+              <ul>
+                  <li class="h_list"><a href="{{url_for('home')}}"
+                      style="text-decoration:none; color:white;">ホーム</a>
+                  </li>
+                  <li class="h_list" id = "kensaku"><a href="{{url_for('search')}}">検索</a>
+                  </li>
+                  <li class="h_list"><a href="{{ url_for('point') }}"
+                      style="text-decoration:none; color:white;">ポイント交換</a>
+                  </li>
+              </ul>
+          </div>
+      </header>
+
+      <div class="container">
+          <div class="prof">
+              <div class="prof_pic">
+                  <img src="{{url_for('static',filename='gakki.jpeg')}}">
+              </div>
+              <div class="prof_bio">
+                  <p>プロフィール:<p>
+                  <p>新垣 結衣（あらがき ゆい、1988年6月11日 - ）は、日本の女優、歌手、ファッションモデル。主な愛称は、ガッキー。沖縄県出身。レプロエンタテインメント所属。</p>
+              </div>
+          </div>
+          <div class="lec">
+              <div class="lec_sum">
+                  <div class="sub_name">
+                      <h1>教科：沖縄方言</h1>
+                  </div>
+                  <div class="sub_value">
+                      <h1>総合評価：{{ total_average  }}</h1>
+                      <h5>出席：{{atattendance_average}}</h5>
+                      <h5>単位：{{credit_average}}</h5>
+                      <h5>得点：{{score_average}}</h5>
+                  </div>
+                  <div class="content">
+                      <p>授業概要：</P>
+                      <p>ガッキーによって沖縄方言のレクチャーが行われる</p>
+                  </div>
+              </div>
+              <div class="recommend">
+                  <h1>おすすめ授業</h1>
+                  <h2 class="rmd_atdance">出席基準</h2>
+                  <h2 class="rmd_tanyi">単位基準</h2>
+                  <h2 class="rmd_score">得点基準</h2>
+                  <h4>a</h4>
+
+              </div>
+              <div class="review">
+                  <h1>評価コメント</h1>
+                  {% for review in reviews %}
+                  <h5>・{{review.review_comment}}　<span>by</span> {{review.user}}さん</h5>
+                  {% endfor %}
+
+              </div>
+          </div>
+      </div>
+      <!--cantainer finish-->
+      <div class="others">
+          <p>この授業を履修している人</p>
+          <a href="{{url_for('account_1')}}">Aさん</a>
+          <div class="person">
+              <div class="person1">
+
+              </div>
+          </div>
+      </div>
+
+      <div class="to_review">
+          <a href="{{ url_for('review')}}">この授業を評価するへ</a>
+      </div>
+
+      <footer>
+
+        <div class="advertisement" width=auto height=auto>
+          <img src="{{ url_for('static',filename='advertisement_1.png')}}" width="50%" height="100px" class="left">
+          <img src="{{ url_for('static',filename='advertisement_2.png')}}" width="50%" height="100px" class="left">
+        </div>
+        <center>
+          <br><br><br><br><br><br><br>
+          <font color="white">東京大学のウェブサイトへは<A href="http://www.u-tokyo.ac.jp/"><font color="white">こちらから</font></A></font>
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+          <font color="white">アカウント情報変更は<A href="{{ url_for('account') }}"><font color="white">こちらから</font></A></font>
+          <br><br><br>
+          <br><br><br>
+      </center>
+      </footer>
+  </body>
+
+
+</html>

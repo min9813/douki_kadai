@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="utf8">
+    <meta name="description" content="acount">
+    <link rel="stylesheet" href="{{url_for('static',filename='account.css')}}">
+    <title>account register</title>
+  </head>
+  <body>
+    <form class=""  method="get">
+      <!-- action="どこに送るか" -->
+
+      <div align="center">
+      <h1>逆評定 in web</h1>
+      <p>姓:<input placeholder="東大"　type="text" name="email"></p>
+      <p>名:<input placeholder="太郎"　type="text" name="email"></p>
+      <p>メールアドレス: <input placeholder="メールアドレス"　type="text" name="email"></p>
+      <p>パスワード: <input placeholder="パスワード"　type="text" name="email"></p>
+      <p>学年: <input placeholder="2"　type="text" name="email"></p>
+      <p>学部: <input placeholder="工学部"　type="text" name="email"></p>
+      <p>学科/科類: <input placeholder="システム創成学科"　type="text" name="email"></p>
+    </form>
+    <form class="" action="{{url_for('home')}}">
+      <p><input type="submit" value="変更"></p>
+    </form>
+    </div>
+  </body>
+<html>

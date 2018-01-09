@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="utf8">
+    <meta name="description" content="acount">
+    <link rel="stylesheet" href="{{ url_for('static', filename='home.css') }}">
+    <title>account register</title>
+  </head>
+  <body>
+    <header>
+      <div class="header_title">
+        <h1 class="h_title">逆評定 in web</h1>
+      </div>
+      <div class="header_list">
+        <ul>
+          <li class="h_list" id = "home">ホーム</li>
+          <li class="h_list"><a href="{{ url_for('search') }}"
+            style="text-decoration:none; color:white;">検索</a></li>
+          <li class="h_list"><a href="{{ url_for('point') }}"
+            style="text-decoration:none; color:white;">ポイント交換</a></li>
+        </ul>
+      </div>
+    </header>
+    <div class="content">
+    <div  width=auto height=auto>
+      <table align="center" width="100%" height="90%" border ="1" class="user">
+        <tr>
+          <td>2年</td>
+          <td>工学部</td>
+          <td>システム創成学科</td>
+        </tr>
+        <tr>
+          <td>東大　太郎</td>
+          <td>週18コマ</td>
+          <td>ポイント数:300</td>
+        </tr>
+      </table>
+    </div>
+      <div class="time_shedule" width=auto height=auto>
+        <table align="center" width="100%" height="90%" border ="1" >
+          <tr>
+            <th>曜日</th>
+            <th>月曜日</th>
+            <th>火曜日</th>
+            <th>水曜日</th>
+            <th>木曜日</th>
+            <th>金曜日</th>
+          </tr>
+          <tr>
+            <td>1限(8:30-10:15)</td>
+            <td><a href="{{url_for('search')}}" id = "unknown">未定</a></td>
+            <td><a href="{{url_for('search')}}" id = "unknown">未定</a></td>
+            <td><a href="{{url_for('more')}}">生命科学概論<br>1102教室<br>オムニバス形式</a></td>
+            <td><a href="{{url_for('search')}}" id = "unknown">未定</a></td>
+            <td><a href="{{url_for('search')}}" id = "unknown">未定</a></td>
+          </tr>
+          <tr>
+            <td>2限(10:25-12:10)</td>
+            <td><a href="{{url_for('more')}}">材料力学2<br>531教室<br>村山先生</a></td>
+            <td><a href="{{url_for('more')}}">環境エネルギー概論<br>523教室<br>寺島、鈴木、ドドビバ先生</a></td>
+            <td><a href="{{url_for('more')}}">力学演習<br>k east114<br>尾崎、柴沼先生</a></td>
+            <td><a href="{{url_for('more')}}">流体力学2<br>1331教室<br>平林、柴田、山口先生</a></td>
+            <td><a href="{{url_for('more')}}">環境エネルギー概論<br>523教室<br>寺島、鈴木、ドドビバ先生</a></td>
+          </tr>
+          <tr>
+            <td>3限(13:00-14:45)</td>
+            <td><a href="{{url_for('more')}}">知識と知能<br>k east214<br>青山、合田、大澤先生</a></td>
+            <td><a href="{{url_for('more')}}">動機付けプロジェクト</a></td>
+            <td><a href="{{url_for('more')}}">数理手法<br>743教室<br>縄田先生</a></td>
+            <td><a href="{{url_for('more')}}">知識と知能<br>k east214<br>青山、合田、大澤先生</a></td>
+            <td><a href="{{url_for('more')}}">プログラミング基礎<br>E41教室<br>稗方先生</a></td>
+          </tr>
+          <tr>
+            <td>4限(14:55-16:40)</td>
+            <td><a href="{{url_for('information')}}">沖縄方言<br>gakki<br>新垣先生</a></td>
+            <td><a href="{{url_for('more')}}">動機付けプロジェクト</a></td>
+            <td><a href="{{url_for('more')}}">数理演習1<br>k east214<br>松島先生</a></td>
+            <td><a href="{{url_for('search')}}" id = "unknown">未定</a></td>
+            <td><a href="{{url_for('more')}}">プログラミング基礎<br>E41教室<br>稗方先生</a></td>
+          </tr>
+          <tr>
+            <td>5限(16:50-18:35)</td>
+            <td><a href="{{url_for('search')}}" id = "unknown">未定</a></td>
+            <td><a href="{{url_for('more')}}">動機付けプロジェクト</a></td>
+            <td><a href="{{url_for('more')}}">数理演習1<br>k east214<br>松島先生</a></td>
+            <td><a href="{{url_for('search')}}" id = "unknown">未定</a></td>
+            <td><a href="{{url_for('more')}}">社会システムと産業<br>1212教室<br>坂田先生</a></td>
+          </tr>
+        </table>
+      </div>
+    </div>
+    <footer>
+      <div class="advertisement" width=auto height=auto>
+        <img src="{{ url_for('static', filename='advertisement_1.png') }}" width="50%" height="100px" class="left">
+        <img src="{{ url_for('static',filename='advertisement_2.png')}}" width="50%" height="100px" class="left">
+      </div>
+      <center>
+        <br><br><br><br><br><br><br><br><br>
+        <font color="white">東京大学のウェブサイトへは<A href="http://www.u-tokyo.ac.jp/"><font color="white">こちらから</font></A></font>
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <font color="white">アカウント情報変更は<A href="{{ url_for('account')}}"><font color="white">こちらから</font></A></font>
+        <br><br><br><br><br><br><br><br><br>
+    </center>
+    </footer>
+  </body>
+<html>

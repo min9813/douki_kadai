@@ -1,0 +1,72 @@
+*{
+  margin: 0;
+}*
+
+.h_list{
+  list-style: none;
+}
+
+header{
+  background-color: #336666;
+  height:90px;
+}
+
+h1{
+  color:white;
+  padding:20px 40px;
+  font-size: 36px;
+}
+
+.header_title{
+  float:left;
+}
+
+.header_list li{
+  color:white;
+  background-color: #006699;
+  float:left;
+  padding: 33px 20px;
+}
+
+.container {
+    padding:14px 18px 18px;
+    margin:0 auto;
+    height:800px;
+    background: #99ccff;
+}
+
+.others{
+  background: #99ccff;
+}
+
+ .to_review{
+   background: #99ccff;
+ }
+
+.prof {
+    width:200px;
+    height:800px;
+    float:left;
+    padding:30px;
+}
+
+.prof_pic {
+    padding-bottom:20px;
+    border-bottom:1px solid #333;
+}
+
+center{
+  background: #336666;
+}
+
+#kensaku{
+  background: #99cccc;
+}
+
+.left{
+  float: left;
+}
+
+span {
+    color:#ff4a4a;
+}

@@ -1,0 +1,67 @@
+*{
+  margin: 0;
+  padding: 0;
+}
+
+li{
+  list-style: none;
+}
+
+header{
+  background-color: #336666;
+  height:90px;
+}
+
+h1{
+  color:white;
+  padding:20px 40px;
+  font-size: 36px;
+}
+
+.header_title{
+  float:left;
+}
+
+.user td{
+  background-color: #6666cc;
+  color:white;
+}
+
+#account_1{
+  background-color: #99cccc;
+}
+
+li{
+  color:white;
+  background-color: #006699;
+  float:left;
+  padding: 33px 20px;
+}
+
+table th {
+  padding: 10px;
+  color : darkblue;
+  background: #006699;
+}
+
+table td{
+  padding:3px 10px;
+  color: black;
+  background: #99ccff;
+}
+
+table a{
+  color: darkblue;
+}
+
+#unknown{
+  color:red;
+}
+
+.left{
+  float: left;
+}
+
+center{
+  background: #336666;
+}

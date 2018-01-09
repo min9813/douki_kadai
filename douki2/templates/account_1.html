@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="utf8">
+    <meta name="description" content="acount">
+    <link rel="stylesheet" href="{{url_for('static',filename='account_1.css')}}">
+    <title>account_1</title>
+  </head>
+  <body>
+    <header>
+      <div class="header_title">
+        <h1 class="h_title">逆評定 in web</h1>
+      </div>
+      <div class="header_list">
+        <ul>
+          <li id="account_1">account1のホーム</li>
+          <li class="h_list"><a href="{{url_for('information')}}"
+            style="text-decoration:none; color:white;">戻る</a></li>
+        </ul>
+      </div>
+    </header>
+    <div class="content">
+    <div  width=auto height=auto>
+      <table align="center" width="100%" height="90%" border ="1" class="user">
+        <tr>
+          <td>1年</td>
+          <td>前期教養学部</td>
+          <td>理科I類</td>
+        </tr>
+        <tr>
+          <td>なまえ</td>
+          <td>週11コマ</td>
+          <td>ポイント数:</td>
+        </tr>
+      </table>
+    </div>
+    <div class="time_shedule" width=auto height=auto>
+      <table align="center" width="100%" height="90%" border ="1" >
+        <tr>
+          <th>曜日</th>
+          <th>月曜日</th>
+          <th>火曜日</th>
+          <th>水曜日</th>
+          <th>木曜日</th>
+          <th>金曜日</th>
+        </tr>
+        <tr>
+          <td>1限(8:30-10:15)</td>
+          <td><a href="{{url_for('more')}}">記号論理学<br>743教室<br>安藤先生</a></td>
+          <td><a href="{{url_for('more')}}">身体運動・健康科学実習<br>各所<br>安西先生</a></td>
+          <td><a href="{{url_for('more')}}">スペイン語2列<br>122教室<br>岡田先生</a></td>
+          <td id = "unknown">未定</td>
+          <td id = "unknown">未定</td>
+        </tr>
+        <tr>
+          <td>2限(10:25-12:10)</td>
+          <td><a href="{{url_for('more')}}">初年次ゼミナール<br>各所<br>各担当</a></td>
+          <td><a href="{{url_for('more')}}">日本国憲法<br>1106教室<br>園田先生</a></td>
+          <td><a href="{{url_for('more')}}">英語一列<br>各所<br>各担当</a></td>
+          <td id = "unknown">未定</td>
+          <td id = "unknown">未定</td>
+        </tr>
+        <tr>
+          <td>3限(13:00-14:45)</td>
+          <td><a href="{{url_for('more')}}">英語中級<br>各所<br>各担当</a></td>
+          <td><a href="{{url_for('more')}}">スペイン語一列<br>1312教室<br>岡崎先生</a></td>
+          <td><a href="{{url_for('more')}}">熱力学<br>523教室<br>飯島先生</a></td>
+          <td id = "unknown">未定</td>
+          <td id = "unknown">未定</td>
+        </tr>
+        <tr>
+          <td>4限(14:55-16:40)</td>
+          <td><a href="{{url_for('information')}}">沖縄方言<br>gakki<br>新垣先生</td>
+          <td id = "unknown">未定</td>
+          <td id = "unknown">未定</td>
+          <td><a href="{{url_for('more')}}">情報<br>E21教室<br>松岡先生</a></td>
+          <td id = "unknown">未定</td>
+        </tr>
+        <tr>
+          <td>5限(16:50-18:35)</td>
+          <td id = "unknown">未定</td>
+          <td id = "unknown">未定</td>
+          <td id = "unknown">未定</td>
+          <td id = "unknown">未定</td>
+          <td><a href="{{url_for('more')}}">力学A<br>532教室<br>松島先生</a></td>
+        </tr>
+      </table>
+    </div>
+  </div>
+  <footer>
+    <div class="advertisement" width=auto height=auto>
+      <img src="{{url_for('static',filename='advertisement_1.png')}}" width="50%" height="100px" class="left">
+      <img src="{{url_for('static',filename='advertisement_2.png')}}" width="50%" height="100px" class="left">
+    </div>
+    <center>
+      <br><br><br><br><br><br><br><br><br>
+      <font color="white">東京大学のウェブサイトへは<A href="http://www.u-tokyo.ac.jp/"><font color="white">こちらから</font></A></font>
+  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+      <font color="white">アカウント情報変更は<A href="{{url_for('account')}}"><font color="white">こちらから</font></A></font>
+      <br><br><br><br><br><br><br><br><br>
+  </center>
+  </footer>
+  </body>
+<html>

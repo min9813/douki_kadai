@@ -1,0 +1,179 @@
+
+
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+
+"http://www.w3.org/TR/html4/loose.dtd">
+
+<html lang="ja">
+
+
+
+<head>
+
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+
+<meta http-equiv="Content-Style-Type" content="text/css">
+
+<link rel="stylesheet" href="{{ url_for('static',filename='system_c.css')}}">
+
+<title>講義検索(工学部システム創成学科PSIコース)</title>
+
+</head>
+<body>
+  <header>
+    <div class="header_title">
+      <h1 class="h_title">逆評定 in web</h1>
+    </div>
+    <div class="header_list">
+      <ul>
+        <li class="h_list"><a href="{{ url_for('home') }}"
+          style="text-decoration:none; color:white;">ホーム</a></li>
+        <li class="h_list" id = "kensaku"><a href="{{ url_for('search') }}">検索</a></li>
+        <li class="h_list"><a href="{{ url_for('point') }}"
+          style="text-decoration:none; color:white;">ポイント交換</a></li>
+      </ul>
+    </div>
+  </header>
+<div class="content">
+  <div class="title">
+    <font size="10">
+講義検索(システム創成学科PSIコース)<BR>
+  </font>
+</div>
+<div class="search">
+<ul>
+  <div class="left">
+     <li id="2nd" class="state">2年生</li>
+           <ul>
+		      <li class="term">Aセメスター</li>
+		          <ul>
+		           <li>動機付けプロジェクト</li>
+	           	   <li>数理手法I</li>
+		           <li>数理演習I</li>
+		           <li>プログラミング基礎</li>
+		           <li>社会システムと産業</li>
+		          </ul>
+              <li class="term">A1ターム</li>
+		           <ul>
+			         <li>材料力学1</li>
+                     <li>社会システム工学基礎</li>
+                     <li>システム創成学基礎</li>
+                     <li>安全学基礎</li>
+                     <li>ビジネス入門</li>
+                     <li>力学演習1</li>
+                     <li>流体力学1</li>
+		          </ul>
+             <li class="term">A2ターム</li>
+			      <ul>
+                    <li>材料力学2</li>
+                    <li>知識と知能</li>
+                    <li>環境エネルギー概論</li>
+                    <li>力学演習2</li>
+                    <li>流体力学2</li>
+　　　　　　　       </ul>　　
+             </ul>
+           </div>
+           <div class="left">
+<li id="3rd" class="state">3年生</li>
+   <ul><li class="term">Sセメスター</li>
+		 <ul>
+		  <li>特許法</li>
+		  <li>社会のための技術</li>
+         </ul>
+       <li class="term">S1ターム</li>
+		 <ul>
+            <li>基礎プロジェクトC</li>
+            <li>設計学基礎</li>
+            <li>システム工学基礎</li>
+            <li>経済学基礎</li>
+            <li>技術プロジェクトマネジメント</li>
+            <li>プログラミング応用IC</li>
+		  </ul>
+          <li class="term">S2ターム</li>
+			<ul>
+              <li>材料力学3</li>
+              <li>数理計画と最適化1</li>
+              <li>先進デザイン</li>
+              <li>エネルギー資源政策論</li>
+              <li>応用流体力学</li>
+			  <li>プログラミング応用ⅡＣ</li>
+			  <li>数理演習2</li>
+			  <li>環境政策論</li>
+			 </ul>
+			 <li class="term">Aセメスター</li>
+		   <ul>
+		  <li>人工物工学</li>
+		  <li>工学シミュレーション</li>
+		  <li>産業組織論</li>
+		  <li>システム制御工学</li>
+		  <li>プロジェクトリスクマネジメント</li>
+		  <li>社会システム工学応用</li>
+		  <li>国際経済学</li>
+		  <li>応用プロジェクトC</li>
+		 </ul>
+       <li class="term">A1ターム</li>
+		 <ul>
+			<li>材料力学4</li>
+            <li>環境システム論</li>
+            <li>物流・交通システム計画</li>
+            <li>数理計画と最適化2</li>
+            <li>数理演習3</li>
+		  </ul>
+          <li class="term">A2ターム</li>
+			<ul>
+              <li>マルチエージェントシステム</li>
+              <li>信頼性工学</li>
+　　　　　　　</ul>
+       </ul>　　　　
+     </div>
+   <li id="4th" class="state">4年生</li>
+   <ul><li class="term">Sセメスター</li>
+		 <ul>
+		  <li>領域プロジェクト1C</li>
+		  <li>経済工学</li>
+		  <li>コミュニケーション技法C</li>
+		  <li>領域プロジェクト2C</li>
+		  <li>ライフサイクル工学</li>
+		  <li>応用データ解析</li>
+		 </ul>
+       <li class="term">S1ターム</li>
+		 <ul>
+			<li>エネルギー・環境経済システム</li>
+		  </ul>
+	    <li class="term">Aセメスター</li>
+		 <ul>
+		  <li>卒業研究</li>
+		  <li>経済工学Ⅱ</li>
+		 </ul>
+       <li class="term">A1ターム</li>
+		 <ul>
+			<li>物流・交通システム計画</li>
+		  </ul>
+
+    </ul>
+</ul>
+<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+<br><br><br><br><br><br><br><br><br><br><br>
+<a href="{{url_for('engineering')}}">講義検索(工学部)に戻る</a><br>
+<a href="{{url_for('search')}}">講義検索に戻る</a>
+
+
+</div>
+
+</div>
+<footer>
+  <div class="advertisement" width=auto height=auto>
+    <img src="{{ url_for('static',filename='advertisement_1.png')}}" width="50%" height="100px" class="left">
+    <img src="{{ url_for('static',filename='advertisement_2.png')}}" width="50%" height="100px" class="left">
+  </div>
+  <center>
+    <br><br><br><br><br>
+    <br><br><br><br><br>
+    <font color="white">東京大学のウェブサイトへは<A href="http://www.u-tokyo.ac.jp/"><font color="white">こちらから</font></A></font>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    <font color="white">アカウント情報変更は<A href="{{ url_for('account') }}"><font color="white">こちらから</font></A></font>
+    <br><br><br>
+</center>
+</footer>
+</body>
+</html>

@@ -1,0 +1,75 @@
+*{
+  margin: 0;
+}*
+
+.h_list{
+  list-style: none;
+}
+
+header{
+  background-color: #336666;
+  height:90px;
+}
+
+h1{
+  color:white;
+  padding:20px 40px;
+  font-size: 36px;
+}
+
+.header_title{
+  float:left;
+}
+
+.header_list li{
+  color:white;
+  background-color: #006699;
+  float:left;
+  padding: 33px 20px;
+}
+
+#kensaku{
+    background-color: #99cccc;
+}
+
+.left{
+  float: left;
+}
+
+.title{
+  background-color: #6666cc;
+  color:white;
+}
+
+.search{
+  background-color: #006699;
+}
+
+
+#white{
+  color:white;
+}
+
+.box{
+  height:30%;
+  width: 40%;
+}
+
+
+center{
+  background: #336666;
+}
+
+.age{
+  float:left;
+}
+
+.state{
+  color: white;
+  font-size: 30px;
+}
+
+.term{
+  color: white;
+  font-size: 25px;
+}

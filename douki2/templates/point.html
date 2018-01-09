@@ -1,0 +1,139 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN"
+    "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+<head>
+
+<meta http-equiv="Content-Type" content="text/html; charset=utf8">
+<link rel="stylesheet" href="{{ url_for('static',filename='point.css')}}">
+
+<title>Point Change</title>
+<script language="JavaScript">
+<!--
+
+
+function buyA(){
+if(document.getElementById("textPoint").value>=100){
+document.getElementById("textPoint").value=parseInt(document.getElementById("textPoint").value)-100;
+ alert("ありがとうございます！100ptと商品Aを交換しました。");
+}
+else{
+ alert("申し訳ありません。ポイントが不足しているため、交換できません。");
+}
+}
+function buyB(){
+if(document.getElementById("textPoint").value>=50){
+document.getElementById("textPoint").value=parseInt(document.getElementById("textPoint").value)-50;
+ alert("ありがとうございます！50ptと商品Bを交換しました。");
+}
+
+else{
+ alert("申し訳ありません。ポイントが不足しているため、交換できません。");
+}
+}
+function buyC(){
+if(document.getElementById("textPoint").value>=20){
+document.getElementById("textPoint").value=parseInt(document.getElementById("textPoint").value)-20;
+ alert("ありがとうございます！20ptと商品Cを交換しました。");
+}
+
+else{
+ alert("申し訳ありません。ポイントが不足しているため、交換できません。");
+}
+}
+function buyD(){
+if(document.getElementById("textPoint").value>=10){
+document.getElementById("textPoint").value=parseInt(document.getElementById("textPoint").value)-10;
+ alert("ありがとうございます！10ptと商品Dを交換しました。");
+}
+else{
+ alert("申し訳ありません。ポイントが不足しているため、交換できません。");
+}
+}
+
+//-->
+</script>
+</head>
+<body>
+  <header>
+    <div class="header_title">
+      <h1 class="h_title">逆評定 in web</h1>
+    </div>
+    <div class="header_list">
+      <ul>
+        <li class="h_list"><a href="{{url_for('home')}}"
+          style="text-decoration:none; color:white;">ホーム</a></li>
+        <li class="h_list"><a href="{{ url_for('search') }}"
+          style="text-decoration:none; color:white;">検索</a></li>
+        <li class="h_list" id = "point">ポイント交換</li>
+      </ul>
+    </div>
+  </header>
+<div class="content">
+<font size="10">
+<form name="form1">
+  <div class="title">
+現在のポイント数 <input type="text" id="textPoint" value="300">pt
+</div>
+</form>
+<center class="search">
+<br>
+<table border="2" width="70%">
+<tr>
+<td style="color:white;">商品A…100pt</td>
+<td><form name="form2" action="javascript:buyA()">
+<input type="submit" value="交換"><br>
+</form>
+</td>
+</tr>
+<tr>
+<td style="color:white;">商品B…50pt</td>
+<td><form name="form3" action="javascript:buyB()">
+<input type="submit" value="交換"><br>
+</form>
+</td>
+</tr>
+<tr>
+<td style="color:white;">
+商品C…20pt</td>
+<td>
+<form name="form4" action="javascript:buyC()">
+<input type="submit" value="交換"><br>
+</form>
+</td>
+</tr>
+<tr>
+<td style="color:white;">商品D…10pt</td>
+<td>
+<form name="form5" action="javascript:buyD()">
+<input type="submit" value="交換"><br>
+</form>
+</td>
+</tr>
+</table>
+</font>
+
+
+<hr><br>
+<a href="{{ url_for('home') }}">ホームに戻る </a><br>
+<br>
+<br>
+
+</div>
+<footer>
+
+  <div class="advertisement" width=auto height=auto>
+    <img src="{{url_for('static',filename='advertisement_1.png')}}" width="50%" height="100px" class="left">
+    <img src="{{url_for('static',filename='advertisement_2.png')}}" width="50%" height="100px" class="left">
+  </div>
+  <center>
+    <br><br><br><br><br><br><br>
+    <font color="white">東京大学のウェブサイトへは<A href="http://www.u-tokyo.ac.jp/"><font color="white">こちらから</font></A></font>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    <font color="white">アカウント情報変更は<A href="{{url_for('account')}}"><font color="white">こちらから</font></A></font>
+    <br><br><br>
+    <br><br><br>
+</center>
+</footer>
+
+</body>
+</html>

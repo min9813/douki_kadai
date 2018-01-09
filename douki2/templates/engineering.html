@@ -1,0 +1,111 @@
+
+
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+
+"http://www.w3.org/TR/html4/loose.dtd">
+
+<html lang="ja">
+
+
+
+<head>
+
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+
+<meta http-equiv="Content-Style-Type" content="text/css">
+
+<link rel="stylesheet" href="{{ url_for('static',filename='engineering.css')}}">
+
+<title>講義検索(工学部)</title>
+
+</head>
+<body>
+
+  <header>
+    <div class="header_title">
+      <h1 class="h_title">逆評定 in web</h1>
+    </div>
+    <div class="header_list">
+      <ul>
+        <li class="h_list"><a href="{{url_for('home')}}"
+          style="text-decoration:none; color:white;">ホーム</a></li>
+        <li class="h_list" id = "kensaku"><a href="{{url_for('search')}}">検索</a></li>
+        <li class="h_list"><a href="{{ url_for('point') }}"
+          style="text-decoration:none; color:white;">ポイント交換</a></li>
+      </ul>
+    </div>
+  </header>
+
+<div class="content">
+<div class="title">
+<font size="10">
+講義検索(工学部)
+</font>
+</div>
+<div class="search">
+<ul>
+  <li class="department">【システム創成学科】</li>
+  <ul class="detail"><li>E & Eコース</li>
+	  <li>SDMコース</li>
+	  <li><a href="{{url_for('system_c')}}">PSIコース</a></li>
+	  </ul>
+   <li class="department">【社会基盤学科】 </li>
+   <img class="map"src="{{url_for('static',filename='hongo_kougaku.png')}}" width="60%" height="800px">
+      <ul class="detail">
+	  <li>Aコース</li>
+	  <li>Bコース</li>
+	  <li>Cコース</li>
+	  </ul>
+    <li class="department">【建築学科】 </li>
+	 <li class="department">【都市工学科】 </li>
+	 <ul class="detail"><li>都市計画コース</li>
+	 <li>都市環境工学コース</li>
+	 </ul>
+	  <li class="department">【機械工学科】 </li>
+	   <li class="department">【機械情報工学科】 </li>
+	    <li class="department">【航空宇宙工学科】 </li>
+      <ul class="detail"><li>航空宇宙システムコース</li>
+          <li>航空宇宙推進コース</li>
+      </ul>
+		 <li class="department">【精密工学科】 </li>
+		  <li class="department">【電子情報工学科】 </li>
+		   <li class="department">【電気情報工学科】 </li>
+		    <li class="department">【物理工学科】 </li>
+			 <li class="department">【計数工学科】 </li>
+			 <ul class="detail"><li>数理情報工学コース</li>
+			     <li>システム情報工学コース</li>
+			</ul>
+			  <li class="department">【マテリアル工学科】 </li>
+			  <ul class="detail"><li>バイオマテリアルコース</li>
+			      <li>環境・基盤マテリアルコース</li>
+				  <li>ナノ・機能マテリアルコース</li>
+				</ul>
+			   <li class="department">【化学システム工学科】 </li>
+			    <li class="department">【応用化学科】 </li>
+				 <li class="department">【化学生命工学科】 </li>
+				 </ul>
+  <a href="{{ url_for('search') }}">講義検索に戻る</a><br>
+</div>
+</div>
+<footer>
+  <div class="advertisement" width=auto height=auto>
+    <img src="{{ url_for('static',filename='advertisement_1.png')}}" width="50%" height="100px" class="left">
+    <img src="{{ url_for('static',filename='advertisement_2.png')}}" width="50%" height="100px" class="left">
+  </div>
+  <center>
+    <br><br><br><br><br>
+    <br><br><br><br><br>
+    <font color="white">東京大学のウェブサイトへは<A href="http://www.u-tokyo.ac.jp/"><font color="white">こちらから</font></A></font>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    <font color="white">アカウント情報変更は<A href="{{ url_for('account') }}"><font color="white">こちらから</font></A></font>
+    <br><br><br>
+</center>
+</footer>
+
+
+
+
+
+
+</body>
+</html>

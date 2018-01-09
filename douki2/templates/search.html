@@ -1,0 +1,77 @@
+
+
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+
+"http://www.w3.org/TR/html4/loose.dtd">
+
+<html lang="ja">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <meta http-equiv="Content-Style-Type" content="text/css">
+    <link rel="stylesheet" href="{{ url_for('static',filename='search.css')}}">
+    <title>検索</title>
+  </head>
+  <body>
+  <header>
+    <div class="header_title">
+      <h1 class="h_title">逆評定 in web</h1>
+    </div>
+    <div class="header_list">
+      <ul>
+        <li class="h_list"><a href="{{ url_for('home') }}"
+          style="text-decoration:none; color:white;">ホーム</a></li>
+        <li class="h_list" id = "kensaku"><a href="{{url_for('search')}}">検索</a></li>
+        <li class="h_list"><a href="{{ url_for('point') }}"
+          style="text-decoration:none; color:white;">ポイント交換</a></li>
+      </ul>
+    </div>
+  </header>
+  <div class="content">
+  <div class="title">
+  <font size="10">
+    講義検索<BR>
+  </font>
+  </div>
+  <div class="search">
+  <ul>
+    <li id = "white"><font size="6">講義名で検索</font></li>
+    <form class="" action="information.html" method="get">
+    <input type="search" name="search" value=""><input type="submit" value="検索">
+    <BR><BR><BR>
+    </form>
+    <li id = "white"><font size="6">学部毎に検索</font></li>
+    <ul>
+      <font size="5">
+        <img class="map"src="{{ url_for('static',filename='hogo.png')}}" width="30%" height="350px">
+        <img class="map" src="{{url_for('static',filename='komaba.png') }}" width="30%" height="350px">
+      <li><a href="{{url_for('engineering')}}">【工学部】</a></li>
+      <li>【前期教養学部】</li>
+      <li>【後期教養学部】</li>
+      <li>【法学部】</li>
+      <li>【経済学部】</li>
+      <li>【理学部】</li>
+      <li>【文学部】</li>
+      <li>【薬学部】</li>
+      <li>【医学部】</li>
+      <li>【教育学部】</li>
+      <li>【農学部】</li>
+    </font>
+    </ul>
+  </ul>
+</div>
+  </div>
+  <footer>
+    <div class="advertisement" width=auto height=auto>
+      <img src="{{url_for('static',filename='advertisement_1.png')}}" width="50%" height="100px" class="left">
+      <img src="{{url_for('static',filename='advertisement_2.png')}}" width="50%" height="100px" class="left">
+    </div>
+    <center>
+      <br><br><br><br><br><br><br>
+      <font color="white">東京大学のウェブサイトへは<A href="http://www.u-tokyo.ac.jp/"><font color="white">こちらから</font></A></font>
+  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+      <font color="white">アカウント情報変更は<A href="{{url_for('account')}}"><font color="white">こちらから</font></A></font>
+      <br><br><br>
+  </center>
+  </footer>
+</body>
+</html>

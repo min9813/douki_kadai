@@ -1,0 +1,81 @@
+
+
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+
+"http://www.w3.org/TR/html4/loose.dtd">
+
+<html lang="ja">
+
+
+
+<head>
+<meta http-equiv="Content-Type" content="text/html"charset="UTF-8">
+<meta http-equiv="Content-Style-Type" content="text/css">
+
+<link rel="stylesheet" href="{{url_for('static',filename='review.css')}}">
+
+<title>評価&レビュー</title>
+
+</head>
+
+
+
+<body>
+    <header>
+      <div class="header_title">
+        <h1 class="h_title">逆評定 in web</h1>
+      </div>
+      <div class="header_list">
+        <ul>
+          <li class="h_list"><a href="home.html"
+            style="text-decoration:none; color:white;">ホーム</a></li>
+          <li class="h_list" id = "kensaku">検索</a></li>
+          <li class="h_list"><a href="point.html"
+            style="text-decoration:none; color:white;">ポイント交換</a></li>
+        </ul>
+      </div>
+    </header>
+    <div class="content">
+        <div class="title">
+            <font size="10">講義のレビュー</font>
+        </div>
+        <div class="search">
+            <h1><a href="{{url_for('information')}}">沖縄方言</a>のレビュー</h1>
+            <ul>
+                <li>【評価】(1...Bad   5...Good)</li>
+                <ul>
+                    <form action='/review/add'>
+                        <li>ハンドルネーム</li>
+                        <input name="user" placeholder="name" style="color:black;">
+                        <li>総合評価</li>
+                        <input name='total_point' placeholder='point' style="color:black;">
+                        <li>個別評価</li>
+                        <li>出席</li>
+                        <input name='attendance_point' placeholder='point' style="color:black;">
+                        <li>単位</li>
+                        <input name='credit_point' placeholder='point' style="color:black;">
+                        <li>得点</li>
+                        <input name='score_point' placeholder='point' style="color:black;">
+                        <li>【レビュー】</li><textarea cols="100" rows="30" name='review_comment' style="color:black;"></textarea>
+                        <input type="submit" value="送信" style="color:black;">
+                    </form>
+                </ul>
+            </ul>
+        </div>
+    </div>
+    <footer>
+        <div class="advertisement" width=auto height=auto>
+            <img src="{{url_for('static',filename='advertisement_1.png')}}" width="50%" height="100px" class="left">
+            <img src="{{url_for('static',filename='advertisement_2.png')}}" width="50%" height="100px" class="left">
+        </div>
+        <center>
+            <br><br><br><br><br>
+            <br><br><br><br><br>
+            <font color="white">東京大学のウェブサイトへは<A href="http://www.u-tokyo.ac.jp/"><font color="white">こちらから</font></A></font>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <font color="white">アカウント情報変更は<A href="{{url_for('account')}}"><font color="white">こちらから</font></A></font>
+            <br><br><br>
+        </center>
+    </footer>
+
+</body>
