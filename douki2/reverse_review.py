@@ -11,9 +11,12 @@ from tinydb import TinyDB, Query
 db = TinyDB('review.json')
 
 @app.route("/")
-@app.route("/register")
 def register():
     return render_template('account_register.html')
+
+@app.route("/account_register")
+def account_2():
+    return render_template('home.html')
 
 @app.route("/home")
 def home():
