@@ -1,11 +1,13 @@
 var NET_REVIEW = 3.0
-var NO_RECOMMEND_ITEM = 2;
+var NO_RECOMMEND_ITEM_ATDNC = 3;
+var NO_RECOMMEND_ITEM_TANYI = 3;
+var NO_RECOMMEND_ITEM_SCORE = 3;
+var test = 3;
 
 var matrix_raku;
 var matrix_jujitu;
+var matrix_score;
 var itemList;
-
-
 
 matrix_raku = {
   "640306": {
@@ -25,7 +27,7 @@ matrix_raku = {
     "w_1_3": 0,
     "w_2_1": 4.0,
     "w_2_2": 0
-  }, // User1 �
+  }, // User1 ､
   "639765": {
     "m_1_1": 4.0,
     "m_1_2": 0,
@@ -43,7 +45,7 @@ matrix_raku = {
     "w_1_3": 0.0,
     "w_2_1": 4.0,
     "w_2_2": 0
-  }, // User2 �
+  }, // User2 ､
   "639265": {
     "m_1_1": 2.0,
     "m_1_2": 0,
@@ -61,7 +63,7 @@ matrix_raku = {
     "w_1_3": 0.0,
     "w_2_1": 4.0,
     "w_2_2": 0
-  }, // User3 �
+  }, // User3 ､
   "634587": {
     "m_1_1": 0.0,
     "m_1_2": 4.0,
@@ -265,57 +267,188 @@ matrix_jujitu = {
   }
 };
 
+matrix_score = {
+  "640398": {
+    "m_1_1": 2.0,
+    "m_1_2": 0,
+    "m_1_3": 0,
+    "m_1_4": 0,
+    "m_2_1": 2.0,
+    "m_2_2": 0,
+    "t_1_1": 3.0,
+    "t_1_2": 0,
+    "t_1_3": 0,
+    "t_2_1": 2.0,
+    "t_2_2": 0.0,
+    "w_1_1": 3.0,
+    "w_1_2": 0.0,
+    "w_1_3": 0.0,
+    "w_2_1": 4.0,
+    "w_2_2": 0
+  },
+  "640315": {
+    "m_1_1": 2.0,
+    "m_1_2": 0,
+    "m_1_3": 0,
+    "m_1_4": 0,
+    "m_2_1": 3.0,
+    "m_2_2": 0,
+    "t_1_1": 3.0,
+    "t_1_2": 0,
+    "t_1_3": 0,
+    "t_2_1": 3.0,
+    "t_2_2": 0.0,
+    "w_1_1": 2.0,
+    "w_1_2": 0.0,
+    "w_1_3": 0.0,
+    "w_2_1": 4.0,
+    "w_2_2": 0
+  },
+  "639675": {
+    "m_1_1": 3.0,
+    "m_1_2": 0,
+    "m_1_3": 0,
+    "m_1_4": 0,
+    "m_2_1": 3.0,
+    "m_2_2": 0,
+    "t_1_1": 2.0,
+    "t_1_2": 0,
+    "t_1_3": 0,
+    "t_2_1": 1.0,
+    "t_2_2": 0.0,
+    "w_1_1": 0.0,
+    "w_1_2": 0.0,
+    "w_1_3": 3.0,
+    "w_2_1": 4.0,
+    "w_2_2": 0
+  },
+  "638765": {
+    "m_1_1": 3.0,
+    "m_1_2": 0,
+    "m_1_3": 0,
+    "m_1_4": 0,
+    "m_2_1": 2.0,
+    "m_2_2": 0,
+    "t_1_1": 4.0,
+    "t_1_2": 0,
+    "t_1_3": 0,
+    "t_2_1": 0.0,
+    "t_2_2": 4.0,
+    "w_1_1": 5.0,
+    "w_1_2": 0.0,
+    "w_1_3": 0.0,
+    "w_2_1": 3.0,
+    "w_2_2": 0
+  },
+  "123456": {
+    "m_1_1": 3.0,
+    "m_1_2": 0,
+    "m_1_3": 0,
+    "m_1_4": 0,
+    "m_2_1": 0.0,
+    "m_2_2": 3,
+    "t_1_1": 3.0,
+    "t_1_2": 0,
+    "t_1_3": 0,
+    "t_2_1": 3.0,
+    "t_2_2": 0.0,
+    "w_1_1": 2.0,
+    "w_1_2": 0.0,
+    "w_1_3": 0.0,
+    "w_2_1": 0.0,
+    "w_2_2": 2.0
+  },
+  "145632": {
+    "m_1_1": 3.0,
+    "m_1_2": 0,
+    "m_1_3": 0,
+    "m_1_4": 0,
+    "m_2_1": 2.0,
+    "m_2_2": 0,
+    "t_1_1": 4.0,
+    "t_1_2": 0,
+    "t_1_3": 0,
+    "t_2_1": 2.0,
+    "t_2_2": 0.0,
+    "w_1_1": 0.0,
+    "w_1_2": 0.0,
+    "w_1_3": 4.0,
+    "w_2_1": 1.0,
+    "w_2_2": 0
+  },
+  "145634": {
+    "m_1_1": 0.0,
+    "m_1_2": 0.0,
+    "m_1_3": 0.0,
+    "m_1_4": 3.0,
+    "m_2_1": 0.0,
+    "m_2_2": 4.0,
+    "t_1_1": 0.0,
+    "t_1_2": 5.0,
+    "t_1_3": 0,
+    "t_2_1": 0.0,
+    "t_2_2": 4.0,
+    "w_1_1": 0.0,
+    "w_1_2": 0.0,
+    "w_1_3": 4.0,
+    "w_2_1": 0.0,
+    "w_2_2": 4.0
+  }
+};
+
 
 itemList = {
   "m_1_1": {
-    "title": "p"
+    "title": "月曜1限　ボーカロイド音楽論"
   },
   "m_1_2": {
-    "title": "o"
+    "title": "月曜1限　ぷよ基礎"
   },
   "m_1_3": {
-    "title": "n"
+    "title": "月曜1限　知識と無能"
   },
   "m_1_4": {
-    "title": "m"
+    "title": "月曜1限　環境エネルギー概論"
   },
   "m_2_1": {
-    "title": "l"
+    "title": "月曜2限　社畜"
   },
   "m_2_2": {
-    "title": "k"
+    "title": "月曜2限　ほりきゅん"
   },
   "t_1_1": {
-    "title": "j"
+    "title": "火曜1限　材料力学"
   },
   "t_1_2": {
-    "title": "i"
+    "title": "火曜1限　流体力学"
   },
   "t_1_3": {
-    "title": "h"
+    "title": "火曜1限　数理手法"
   },
   "t_2_1": {
-    "title": "g"
+    "title": "火曜2限　ツイッター1列"
   },
   "t_2_2": {
-    "title": "f"
+    "title": "火曜2限　ティンダ1列"
   },
   "w_1_1": {
-    "title": "e"
+    "title": "水曜1限　社会システム工学"
   },
   "w_1_2": {
-    "title": "d"
+    "title": "水曜1限　安全学"
   },
   "w_1_3": {
-    "title": "c"
+    "title": "水曜1限　システム創成学"
   },
   "w_2_1": {
-    "title": "b"
+    "title": "水曜2限　ビジネス入門"
   },
   "w_2_2": {
-    "title": "a"
+    "title": "水曜2限　ビジネス入眠"
   }
 };
+
+
 
 
 function binarize(_matrix) {
@@ -466,16 +599,21 @@ function createItemList() {
 }
 */
 
-function createModalWindow(selectMovieId, recommendList_1, recommendList_2) {
-  document.getElementById("select_subject").innerHTML = itemList[selectMovieId].title;
-  document.getElementById("recommend_list1").innerHTML = "";
-  document.getElementById("recommend_list2").innerHTML = "";
+function createRmdList(recommendList_1, recommendList_2, recommendList_3) {
+  // document.getElementById("select_subject").innerHTML = itemList[selectMovieId].title;
+  document.getElementById("rmd_atdance").innerHTML = "";
+  document.getElementById("rmd_tanyi").innerHTML = "";
+  document.getElementById("rmd_score").innerHTML = "";
   if (recommendList_1.length == 0) {
-    $("#recommend_list1").append("�f�[�^�������܂���");
+    $("#rmd_atdance").append("まだそのデータはありません");
     return;
   }
   if (recommendList_2.length == 0) {
-    $("#recommend_list2").append("�f�[�^�������܂���");
+    $("#rmd_tanyi").append("まだそのデータはありません");
+    return;
+  }
+  if (recommendList_3.length == 0) {
+    $("#rmd_score").append("まだそのデータはありません");
     return;
   }
 
@@ -483,77 +621,43 @@ function createModalWindow(selectMovieId, recommendList_1, recommendList_2) {
     var itemId = recommendList_1[i];
     var li = document.createElement("li");
     li.innerHTML = itemList[itemId].title;
-    document.getElementById("recommend_list1").appendChild(li);
+    document.getElementById("rmd_atdance").appendChild(li);
   }
   for (var i = 0; i < recommendList_2.length; i++) {
     var itemId = recommendList_2[i];
     var li = document.createElement("li");
     li.innerHTML = itemList[itemId].title;
-    document.getElementById("recommend_list2").appendChild(li);
+    document.getElementById("rmd_tanyi").appendChild(li);
+  }
+  for (var i = 0; i < recommendList_3.length; i++) {
+    var itemId = recommendList_3[i];
+    var li = document.createElement("li");
+    li.innerHTML = itemList[itemId].title;
+    document.getElementById("rmd_score").appendChild(li);
   }
 }
 
-function show_change(selecter) {
-  $(selecter).on("change", function() {
-    var Item_Id = $(this).val();
-    if (!(Item_Id in itemList)) {
-      console.log("�܂����̋��Ȃ͂����܂����B")
-    }
-
-    var SubjectName = itemList[Item_Id];
-    if (Item_Id in matrix_raku) {
-      rmdList_result_raku = recommendByRank(matrix_raku[Item_Id], NO_RECOMMEND_ITEM);
-    }
-    if (Item_Id in matrix_jujitu) {
-      rmdList_result_jujitu = recommendByRank(matrix_jujitu[Item_Id], NO_RECOMMEND_ITEM);
-    }
-    //console.log(itemList[Item_Id]);
-    createModalWindow(Item_Id, rmdList_result_raku, rmdList_result_jujitu);
-    showModalWindow();
-
-    kakikae();;
-  })
-}
-
-function kakikae() {
-  var select = document.getElementById('subject_name_valuate');
-
-  var Monday_1 = document.course_select.mon1.value;
-  var Monday_2 = document.course_select.mon2.value;
-  var Tuesday_1 = document.course_select.tue1.value;
-  var Tuesday_2 = document.course_select.tue2.value;
-  var Wednesday_1 = document.course_select.wed1.value;
-  var Wednesday_2 = document.course_select.wed2.value;
-  var list_selected = [Monday_1, Monday_2, Tuesday_1, Tuesday_2, Wednesday_1, Wednesday_2];
-  console.log(Monday_1);
-
-  var SubName = "";
-  while (0 < select.childNodes.length) {
-    select.removeChild(select.childNodes[0]);
-  }
-  for (var k = 0; k < list_selected.length; k++) {
-    if (list_selected[k] in itemList) {
-      SubName = itemList[list_selected[k]].title
-      //option�v�f�̍폜
-
-
-
-      // option�v�f�𐶐�
-
-      var option = document.createElement('option');
-      var text = document.createTextNode(SubName);
-      option.appendChild(text);
-
-      // option�v�f���ǉ�
-      select.appendChild(option);
-    }
-  }
-
-
-
-  // �K�v�ȕ�����option�����ƒǉ����J���Ԃ�
-}
-
+// function show_change(selecter) {
+//   $(selecter).on("change", function() {
+//     var Item_Id = $(this).val();
+//     if (!(Item_Id in itemList)) {
+//       console.log("まだその教科はありません")
+//     }
+//
+//     var SubjectName = itemList[Item_Id];
+//     if (Item_Id in matrix_raku) {
+//       rmdList_result_raku = recommendByRank(matrix_raku[Item_Id], NO_RECOMMEND_ITEM);
+//     }
+//     if (Item_Id in matrix_jujitu) {
+//       rmdList_result_jujitu = recommendByRank(matrix_jujitu[Item_Id], NO_RECOMMEND_ITEM);
+//     }
+//     //console.log(itemList[Item_Id]);
+//     // createModalWindow(Item_Id, rmdList_result_raku, rmdList_result_jujitu);
+//     // showModalWindow();
+//     //
+//     // kakikae();;
+//   })
+// }
 
 
 $(function() {
@@ -561,51 +665,74 @@ $(function() {
   // Step 1
   matrix_raku = binarize(matrix_raku);
   matrix_jujitu = binarize(matrix_jujitu);
+  matrix_score = binarize(matrix_score);
 
   // Step 2
   matrix_raku = countCollaborative(matrix_raku);
   matrix_jujitu = countCollaborative(matrix_jujitu);
+  matrix_score = countCollaborative(matrix_score);
   // Step 3
   matrix_raku = calcProbability(matrix_raku);
   matrix_jujitu = calcProbability(matrix_jujitu);
+  matrix_score = calcProbability(matrix_score);
   // Step 4
-  /**
-    $("select.mon1").on("change",function(){
-      var Item_Id = $(this).val();
-      if (!(Item_Id in itemList)){
-        console.log("�܂����̋��Ȃ͂����܂����B")
-      }
-
-      var SubjectName=itemList[Item_Id];
-      if (Item_Id in matrix_raku) {
-        rmdList_result_raku = recommendByRank(matrix_raku[Item_Id], NO_RECOMMEND_ITEM);
-      }
-      if (Item_Id in matrix_jujitu) {
-        rmdList_result_jujitu = recommendByRank(matrix_jujitu[Item_Id], NO_RECOMMEND_ITEM);
-      }
-      //console.log(itemList[Item_Id]);
-      createModalWindow(Item_Id, rmdList_result_raku,rmdList_result_jujitu);
-      showModalWindow();
-
-    ;
-  })*/
-
-  show_change("select.mon1");
-  show_change("select.mon2");
-  show_change("select.tue1");
-  show_change("select.tue2");
-  show_change("select.wed1");
-  show_change("select.wed2");
 
 
+  // display_rmd("#display_atdance")
+  // NO_RECOMMEND_ITEM_ATDNC = test;
+  // display_rmd("#display_tanyi")
+  // NO_RECOMMEND_ITEM_TANYI = test;
+  // display_rmd("#display_score")
+  // NO_RECOMMEND_ITEM_SCORE = test;
+  //
+  // if (Item_Id in matrix_raku) {
+  //   rmdList_result_raku = recommendByRank(matrix_raku[Item_Id], NO_RECOMMEND_ITEM_ATDNC);
+  // }
 
-  $(document).on("click", "#modal_close,#modal_overlay", function() {
-    hideModalWindow();
-  });
+  $("#display_atdance").on("change", function() {
+    NO_RECOMMEND_ITEM_ATDNC = $(this).val();
+    if (Item_Id in matrix_raku) {
+      rmdList_result_raku = recommendByRank(matrix_raku[Item_Id], NO_RECOMMEND_ITEM_ATDNC);
+      createRmdList(rmdList_result_raku, rmdList_result_jujitu, rmdList_result_score);
+      
+    }
+  })
 
-  $(window).on("load resize", function() {
-    centeringModalSyncer();
-  });
+  $("#display_tanyi").on("change", function() {
+    NO_RECOMMEND_ITEM_TANYI = $(this).val();
+    if (Item_Id in matrix_jujitu) {
+      rmdList_result_jujitu = recommendByRank(matrix_jujitu[Item_Id], NO_RECOMMEND_ITEM_TANYI);
+      createRmdList(rmdList_result_raku, rmdList_result_jujitu, rmdList_result_score);
+    }
+  })
+
+  $("#display_score").on("change", function() {
+    NO_RECOMMEND_ITEM_SCORE = $(this).val();
+    if (Item_Id in matrix_score) {
+      rmdList_result_score = recommendByRank(matrix_score[Item_Id], NO_RECOMMEND_ITEM_SCORE);
+      createRmdList(rmdList_result_raku, rmdList_result_jujitu, rmdList_result_score);
+    }
+  })
+
+  Item_Id = "m_1_1";
+
+  if (Item_Id in matrix_raku) {
+    rmdList_result_raku = recommendByRank(matrix_raku[Item_Id], NO_RECOMMEND_ITEM_ATDNC);
+  }
+  if (Item_Id in matrix_jujitu) {
+    rmdList_result_jujitu = recommendByRank(matrix_jujitu[Item_Id], NO_RECOMMEND_ITEM_TANYI);
+  }
+  if (Item_Id in matrix_score) {
+    rmdList_result_score = recommendByRank(matrix_score[Item_Id], NO_RECOMMEND_ITEM_SCORE);
+  }
+
+  createRmdList(rmdList_result_raku, rmdList_result_jujitu, rmdList_result_score);
+  // if (Item_Id in matrix_jujitu) {
+  //   rmdList_result_jujitu = recommendByRank(matrix_jujitu[Item_Id], NO_RECOMMEND_ITEM_TANYI);
+  // }
+  // if (Item_Id in matrix_score) {
+  //   rmdList_result_score = recommendByRank(matrix_score[Item_Id], NO_RECOMMEND_ITEM_SCORE);
+  // }
 
 
 
