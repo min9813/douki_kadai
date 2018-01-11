@@ -8,8 +8,8 @@ import numpy as np
 app = Flask(__name__)
 
 from tinydb import TinyDB, Query
-db = TinyDB('review.json')
-
+review_db = TinyDB('review.json')
+user_db = TinyDB('user.json')
 @app.route("/")
 def register():
     return render_template('account_register.html')
@@ -20,7 +20,23 @@ def account_2():
 
 @app.route("/home")
 def home():
-    return render_template('home.html')
+    #jsonデータを読み込む
+    data=json.load(open('user.json'))
+    #  Pandas の dataFrameに変換
+    df=pd.DataFrame.from_records(data['_default'])
+    # Tによって転置する必要がある
+    df=df.T
+    # dfの最後の行をとってくる(still DF)
+    df=df[-1:]
+    # DFをarrayに変換し値を取得
+    first_name=df['first_name'].values[0]
+    last_name=df['last_name'].values[0]
+    mail_address=df['mail_address'].values[0]
+    password=df['pass'].values[0]
+    grade=df['grade'].values[0]
+    major=df['major'].values[0]
+    course=df['course'].values[0]
+    return render_template('home.html',grade=grade,major=major,course=course,last_name=last_name,first_name=first_name)
 
 @app.route("/home/user")
 def home_user():
@@ -76,7 +92,7 @@ def information():
     score_average=np.mean(df['score_point'].values)
     score_average=round(score_average,1)
 
-    return render_template('information.html', total_average=total_average,atattendance_average=attendance_average,credit_average=credit_average,score_average=score_average,reviews=db.all())
+    return render_template('information.html', total_average=total_average,atattendance_average=attendance_average,credit_average=credit_average,score_average=score_average,reviews=review_db.all())
 
 
 @app.route("/review")
@@ -85,7 +101,7 @@ def review():
 
 @app.route("/review/add")
 def add():
-    db.insert({
+    review_db.insert({
         'user': request.args.get('user'),
         'total_point':request.args.get('total_point',type=int),
         'attendance_point':request.args.get('attendance_point',type=int),
@@ -97,15 +113,32 @@ def add():
 
     return information()
 
+@app.route("/account_register")
+def account_register():
+    user_db.insert({
+        'first_name':request.args.get('first_name'),
+        'last_name':request.args.get('last_name'),
+        'mail_address':request.args.get('email'),
+        'pass':request.args.get('password'),
+        'grade':request.args.get('grade',type=int),
+        'course':request.args.get('course'),
+        'major':request.args.get('major')
+        })
+
+    return home()
+
+
 
 
 
 @app.route("/reset")
 def reset():
-    if db is not None:
-        db.purge()
-    db.insert({'user': 'A','total_point':3,"attendance_point":4,"credit_point":5,"score_point":4, "review_comment":"可愛い過ぎる"})
-    return information()
+    if review_db is not None:
+        review_db.purge()
+    review_db.insert({'user': 'A','total_point':3,"attendance_point":4,"credit_point":5,"score_point":4, "review_comment":"可愛い過ぎる"})
+    if user_db is not None:
+        review_db.purge()
+    return register()
 
 if __name__ == "__main__":
     app.run(debug = True)

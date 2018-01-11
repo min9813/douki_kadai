@@ -8,14 +8,21 @@ li{
 }
 
 header{
-  background-color: #336666;
+  background-image: url(背景茶色.png);
   height:90px;
 }
 
+
 h1{
-  color:white;
+  color:black;
   padding:20px 40px;
   font-size: 36px;
+  font-family: "SimSun",sans-serif;
+}
+
+.header_img{
+  float:left;
+  padding-left: 20px;
 }
 
 .header_title{
@@ -23,31 +30,41 @@ h1{
 }
 
 .user td{
-  background-color:#6666cc;
-  color:white;
+  background-color: #fae6be;
+  color:black;
 }
 
+
 #home{
-  background-color: #99cccc;
+  background-color: #dbf1fc;
 }
 
 li{
-  color:white;
-  background-color: #006699;
+  color:#5c5c5c;
+  background-color: #5c5c5c;
   float:left;
   padding: 33px 20px;
 }
 
+table {
+  border-collapse: collapse;
+  border: solid 2px NavajoWhite;/*表全体を線で囲う*/
+}
+table th, table td {
+  border: dashed 1px Gray;/**/
+  /*破線 1px オレンジ*/
+}
+
 table th {
   padding: 10px;
-  color : darkblue;
-  background: #006699;
+  color : white;
+  background: #5c5c5c;
 }
 
 table td{
   padding:3px 10px;
   color: black;
-  background:#99ccff;
+  background: #dbf1fc;
 }
 
 table a{
@@ -56,7 +73,7 @@ table a{
 
 #unknown {
   color:red;
-  background: pink;
+
 }
 
 .left{
@@ -64,5 +81,5 @@ table a{
 }
 
 center{
-  background: #336666;
+  background-image: url(背景茶色.png);
 }
