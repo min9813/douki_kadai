@@ -3,14 +3,13 @@
   <head>
     <meta charset="utf-8">
     <title>information</title>
-    <link rel="stylesheet" href="information.css">
+    <link rel="stylesheet" href="{{ url_for('static', filename='information.css') }}">
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+    <script type="text/javascript" src="../static/filtering.js"></script>
   </head>
 
   <body>
       <header>
-          <div class="header_img">
-            <img src=logo2.png width=80px height=80px>
-          </div>
           <div class="header_title">
               <h1 class="h_title">逆評定 in web</h1>
           </div>
@@ -54,7 +53,53 @@
                       <p>ガッキーによって沖縄方言のレクチャーが行われる</p>
                   </div>
               </div>
+              <div class="recommend">
+                  <h1>おすすめ授業</h1>
+                  <h2 class="rmd_atdance">出席基準</h2>
 
+                   <p>
+                     <span>
+                       <font color="blue">おススメ表示数</font>
+                     </span>
+                     <form name="display_number_atdance">
+                       <select id="display_atdance" class="display_number">
+                         <option value=1>1</option>
+                         <option value=2>2</option>
+                         <option value=3 selected>3</option>
+                       </select>
+                     </form>
+                     <ol id="rmd_atdance"></ol>
+                   </p>
+                  <h2 class="rmd_tanyi">単位基準</h2>
+                    <p>
+                      <span>
+                        <font color="blue">おススメ表示数</font>
+                      </span>
+                      <form name="display_number_tanyi">
+                        <select id="display_tanyi" class="display_number">
+                          <option value=1>1</option>
+                          <option value=2>2</option>
+                          <option value=3 selected>3</option>
+                        </select>
+                      </form>
+                      <ol id="rmd_tanyi"></ol>
+                    </p>
+                  <h2 class="rmd_score">得点基準</h2>
+                    <p>
+                      <span>
+                        <font color="blue">おススメ表示数</font>
+                      </span>
+                      <form name="display_number_score">
+                        <select id="display_score" class="display_number">
+                          <option value=1>1</option>
+                          <option value=2>2</option>
+                          <option value=3 selected>3</option>
+                        </select>
+                      </form>
+                      <ol id="rmd_score"></ol>
+                    </p>
+
+              </div>
               <div class="review">
                   <h1>評価コメント</h1>
                   {% for review in reviews %}
@@ -98,4 +143,3 @@
 
 
 </html>
-

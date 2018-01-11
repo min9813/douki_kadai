@@ -7,23 +7,15 @@ li{
   list-style: none;
 }
 
-body{background-image: url(背景茶色.png);}
 header{
-  background-image: url(背景茶色.png);
+  background-color: #336666;
   height:90px;
 }
 
-
 h1{
-  color:black;
+  color:white;
   padding:20px 40px;
   font-size: 36px;
-  font-family: "SimSun",sans-serif;
-}
-
-.header_img{
-  float:left;
-  padding-left: 20px;
 }
 
 .header_title{
@@ -31,40 +23,31 @@ h1{
 }
 
 .user td{
-  background-color: #fae6be;
-  color:black;
+  background-color: #6666cc;
+  color:white;
 }
 
 #account_1{
-  background-color: #dbf1fc;
+  background-color: #99cccc;
 }
 
 li{
-  color:#5c5c5c;
-  background-color: #5c5c5c;
+  color:white;
+  background-color: #006699;
   float:left;
   padding: 33px 20px;
 }
 
-table {
-  border-collapse: collapse;
-  border: solid 2px NavajoWhite;/*表全体を線で囲う*/
-}
-table th, table td {
-  border: dashed 1px Gray;/**/
-  /*破線 1px オレンジ*/
-}
-
 table th {
   padding: 10px;
-  color : white;
-  background: #5c5c5c;
+  color : darkblue;
+  background: #006699;
 }
 
 table td{
   padding:3px 10px;
   color: black;
-  background: #dbf1fc;
+  background: #99ccff;
 }
 
 table a{
@@ -80,5 +63,5 @@ table a{
 }
 
 center{
-  background-image: url(背景茶色.png);
+  background: #336666;
 }
