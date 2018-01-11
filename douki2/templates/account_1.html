@@ -3,13 +3,19 @@
   <head>
     <meta charset="utf8">
     <meta name="description" content="acount">
-    <link rel="stylesheet" href="{{url_for('static',filename='account_1.css')}}">
+    <link rel="stylesheet" href="../static/account_1.css">　
+
+
     <title>account_1</title>
   </head>
   <body>
     <header>
+      <div class="header_img">
+        <img src="../static/logo2.png" width=80px height=80px>
+      </div>
+
       <div class="header_title">
-        <h1 class="h_title">逆評定 in web</h1>
+        <h1 class="h_title">逆評定 in WEB</h1>
       </div>
       <div class="header_list">
         <ul>
@@ -19,6 +25,7 @@
         </ul>
       </div>
     </header>
+
     <div class="content">
     <div  width=auto height=auto>
       <table align="center" width="100%" height="90%" border ="1" class="user">
@@ -94,9 +101,9 @@
     </div>
     <center>
       <br><br><br><br><br><br><br><br><br>
-      <font color="white">東京大学のウェブサイトへは<A href="http://www.u-tokyo.ac.jp/"><font color="white">こちらから</font></A></font>
+      <font color="black">東京大学のウェブサイトへは<A href="http://www.u-tokyo.ac.jp/"><font color="blue">こちらから</font></A></font>
   &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-      <font color="white">アカウント情報変更は<A href="{{url_for('account')}}"><font color="white">こちらから</font></A></font>
+      <font color="black">アカウント情報変更は<A href="{{url_for('account')}}"><font color="blue">こちらから</font></A></font>
       <br><br><br><br><br><br><br><br><br>
   </center>
   </footer>
