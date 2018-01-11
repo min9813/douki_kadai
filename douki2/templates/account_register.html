@@ -8,6 +8,8 @@
   <!-- Optional theme -->
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
 
+  <!-- jQuery (necessary for Bootstrap’s JavaScript plugins) -->
+  <script src="{{url_for('static', filename='jquery.min.js')}}"></script>
   <!-- Latest compiled and minified JavaScript -->
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
 <!--
@@ -78,9 +80,8 @@
       <div class="wrapper" align=center>
           <form  action='/account_register' class="form-signin"  method="get">
             <!-- action="どこに送るか" -->
-
-            <img src=logo.png>
-
+              <img src="{{url_for('static', filename='image.png')}}">
+              <p></p>
               <p>姓:<input type="text" name="last_name" class="form-control"></p>
               <p>名:<input type="text" name="first_name" class="form-control"></p>
               <p>メールアドレス: <input type="text" name="email" class="form-control"></p>

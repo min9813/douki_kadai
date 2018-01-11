@@ -3,14 +3,11 @@
   <head>
     <meta charset="utf8">
     <meta name="description" content="acount">
-    <link rel="stylesheet" href="home.css">
+    <link rel="stylesheet" href="{{ url_for('static', filename='home.css') }}">
     <title>account register</title>
   </head>
   <body>
     <header>
-      <div class="header_img">
-        <img src=logo2.png width=80px height=80px>
-      </div>
       <div class="header_title">
         <h1 class="h_title">逆評定 in web</h1>
       </div>
@@ -99,9 +96,9 @@
       </div>
       <center>
         <br><br><br><br><br><br><br><br><br>
-        <font color="black">東京大学のウェブサイトへは<A href="http://www.u-tokyo.ac.jp/"><font color="blue">こちらから</font></A></font>
+        <font color="white">東京大学のウェブサイトへは<A href="http://www.u-tokyo.ac.jp/"><font color="white">こちらから</font></A></font>
     &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-        <font color="black">アカウント情報変更は<A href="{{ url_for('account')}}"><font color="blue">こちらから</font></A></font>
+        <font color="white">アカウント情報変更は<A href="{{ url_for('account')}}"><font color="white">こちらから</font></A></font>
         <br><br><br><br><br><br><br><br><br>
     </center>
     </footer>

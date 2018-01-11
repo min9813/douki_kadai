@@ -7,34 +7,23 @@
 }
 
 header{
-  background-image: url(背景茶色.png);
+  background-color: #336666;
   height:90px;
 }
 
-
 h1{
-  color:black;
+  color:white;
   padding:20px 40px;
   font-size: 36px;
-  font-family: "SimSun",sans-serif;
-}
-
-.header_img{
-  float:left;
-  padding-left: 20px;
 }
 
 .header_title{
   float:left;
 }
 
-#kensaku{
-  background: #dbf1fc;
-}
-
 .header_list li{
-  color:black;
-  background-color: #5c5c5c;
+  color:white;
+  background-color: #006699;
   float:left;
   padding: 33px 20px;
 }
@@ -43,7 +32,7 @@ h1{
     padding:14px 18px 18px;
     margin:0 auto;
     height:800px;
-    background-image: url(mokume.png);
+    background: #99ccff;
 }
 
 .others{
@@ -70,6 +59,9 @@ center{
   background: #336666;
 }
 
+#kensaku{
+  background: #99cccc;
+}
 
 .left{
   float: left;
