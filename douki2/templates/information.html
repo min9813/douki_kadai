@@ -5,9 +5,20 @@
     <title>information</title>
     <link rel="stylesheet" href="{{ url_for('static', filename='information.css') }}">
     <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
-    <script type="text/javascript" src="../static/filtering.js"></script>
-  </head>
 
+    <script type="text/javascript" src="../static/filtering.js"></script>
+
+  </head>
+  <style type="text/css">
+  header{
+      background-image: url(static/背景茶色.png);
+  }
+
+  center{
+      background-image:url(static/背景茶色.png);
+  }
+
+  </style>
   <body>
       <header>
           <div class="header_title">
@@ -53,6 +64,7 @@
                       <p>ガッキーによって沖縄方言のレクチャーが行われる</p>
                   </div>
               </div>
+
               <div class="recommend">
                   <h1>おすすめ授業</h1>
                   <h2 class="rmd_atdance">出席基準</h2>
@@ -100,6 +112,7 @@
                     </p>
 
               </div>
+
               <div class="review">
                   <h1>評価コメント</h1>
                   {% for review in reviews %}
@@ -107,16 +120,32 @@
                   {% endfor %}
 
               </div>
+
+              <div class='file'>
+                  <div class='uploaded_file'>
+                      <h1>過去問及びシケプリ</h1>
+                      <h5><a href=''>2017年度</a></h5>
+                      <h5><a href=''>2016年度</a></h5>
+
+                  </div>
+                  <div class='upload_file'>
+                      <h4>ファイルをアップロードする</h4>
+                      <form method=post　enctype=multipart/form-data>
+                          <p><input type=file name=file>
+                              <input type=submit value='アップロード'></p>
+                    </form>
+                  </div>
+              </div>
+
           </div>
       </div>
       <!--cantainer finish-->
       <div class="others">
           <p>この授業を履修している人</p>
-          <a href="{{url_for('account_1')}}">Aさん</a>
           <div class="person">
-              <div class="person1">
-
-              </div>
+              {% for review in reviews %}
+              <a href="{{url_for('account_1')}}">{{review.user}}さん</a>
+              {% endfor %}
           </div>
       </div>
 
